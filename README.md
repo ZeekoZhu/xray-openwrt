@@ -7,7 +7,7 @@
 
 ## 自行构建ipk安装包
 
-在[https://github.com/felix-fly/xray-openwrt](前人)的基础上，专为 openwrt 打造的适用于[https://xtls.github.io/document/level-2/tproxy.html](全局透明代理)的 xray 安装包
+在[前人](https://github.com/felix-fly/xray-openwrt)的基础上，专为 openwrt 打造的适用于[全局透明代理](https://xtls.github.io/document/level-2/tproxy.html)的 xray 安装包
 
 ```fish
 git clone https://github.com/ZeekoZhu/xray-openwrt.git
@@ -49,12 +49,12 @@ git clone https://github.com/ZeekoZhu/xray-openwrt.git
 ## 一些说明
 
 * `sample-config.json` 与 `package/data/etc/init.d/xray` 搭配使用的话， openwrt 自带的 dnsmasq 的 DNS 功能将会被忽略，所有的 DNS 查询将会通过 xray 的 DNS 模块查询。
-* `sample-config.json` 使用了来自 [https://github.com/Loyalsoldier/v2ray-rules-dat](Loyalsoldier/v2ray-rules-dat) 的路由规则文件
+* `sample-config.json` 使用了来自 [Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat) 的路由规则文件
 
 ## 参考链接
 
-* [https://xtls.github.io/document/level-2/tproxy.html](透明代理（TProxy）配置教程)
-* [https://github.com/XTLS/Xray-core/issues/185#issuecomment-762603549](openwrt主路由iptables透明代理时，路由器自身不能解析域名)
-* [https://github.com/wongsyrone/openwrt-Pcap_DNSProxy/issues/46](如何彻底解决高并发时 file descriptor 不够的问题？)
-* [https://openwrt.org/docs/guide-developer/procd-init-scripts](OpenWrt: procd init script parameters)
-* [https://fishshell.com/docs/current/index.html](Fish Shell Documents)
+* [透明代理（TProxy）配置教程](https://xtls.github.io/document/level-2/tproxy.html)
+* [openwrt主路由iptables透明代理时，路由器自身不能解析域名](https://github.com/XTLS/Xray-core/issues/185#issuecomment-762603549)
+* [如何彻底解决高并发时 file descriptor 不够的问题？](https://github.com/wongsyrone/openwrt-Pcap_DNSProxy/issues/46)
+* [OpenWrt: procd init script parameters](https://openwrt.org/docs/guide-developer/procd-init-scripts)
+* [Fish Shell Documents](https://fishshell.com/docs/current/index.html)
