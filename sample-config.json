@@ -1,6 +1,7 @@
 {
   "log": {
-    "loglevel": "warning"
+    "loglevel": "warning",
+    "error": "/var/log/xray.log"
   },
   "dns": {
     "servers": [
@@ -32,7 +33,9 @@
         "domains": [
           "geosite:geolocation-!cn"
         ]
-      }
+      },
+      "1.1.1.1",
+      "https+local://doh.dns.sb/dns-query"
     ]
   },
   "inbounds": [
@@ -102,7 +105,9 @@
     },
     {
       "protocol": "freedom",
-      "settings": {},
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      },
       "streamSettings": {
         "sockopt": {
           "mark": 2
@@ -136,23 +141,22 @@
     }
   ],
   "routing": {
-    "domainStrategy": "IPOnDemand",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "inboundTag": [
           "all-in"
         ],
         "port": 53,
-        "network": "udp",
         "outboundTag": "dns-out",
         "type": "field"
       },
       {
         "ip": [
+          "8.8.8.8",
           "1.1.1.1"
         ],
         "outboundTag": "proxy",
-        "port": "53",
         "type": "field"
       },
       {
